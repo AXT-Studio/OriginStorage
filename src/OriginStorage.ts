@@ -24,6 +24,7 @@ type OriginStorageEntry<KV> = {
  * IndexedDBのLocalStorage風ラッパーである"OriginStorage"へのアクセスを提供します。
  * - OriginStorageは、オリジンごとに、(名前が被らない限り)自由にいくつでも作成することができます。
  * - OriginStorageは、各オリジンごとにIndexedDBのデータベース"AXT-Studio/OriginStorage"に保存されます。
+ * - stringをkey、構造化複製可能な値をvalueとするKey-Valueストアとして使えます。
  * - 型推論を効かせることができます。
  * - 一部、ECMAScript Mapでできる操作も提供されます。
  */

@@ -50,7 +50,40 @@ Released under the [MIT License](LICENSE).
 
 ## Usage
 
-詳細は[JSRのドキュメントページ](https://jsr.io/@ayaexptech/originstorage/doc)及びJSDocコメントを参照してください。
+基本的には[Web Storage API](https://developer.mozilla.org/ja/docs/Web/API/Storage)(`sessionStorage`や`localStorage`)と同じように使えます。  
+ただし、IndexedDBを扱う都合上、各メソッドはPromiseを返します。適宜`await`などを使用してください。
+
+```ts
+import { OriginStorage } from "@ayaexptech/originstorage";
+
+const exampleOriginStorage = new OriginStorage("example");
+await exampleOriginStorage.setItem("hoge", "fuga");
+await exampleOriginStorage.getItem("hoge"); // => "fuga"
+await exampleOriginStorage.removeItem("hoge");
+await exampleOriginStorage.clear();
+```
+
+- keyは`string`である必要があります。
+- valueは構造化複製可能であればなんでもよいです。
+
+`new OriginStorage()`は型引数として保存するKey-Valueペアの型をもらうことができます。
+
+```ts
+type StorageSchema = {
+    count: number;
+    kind: 1 | 2;
+};
+const storage = new OriginStorage<StorageSchema>("with_schema");
+await storage.getItem("invalid");
+//                    ^^^^^^^^^ ... Error
+await storage.setItem("kind", 99);
+//                            ^^ ... Error
+await storage.getItem("count") // @type {number | undefined} (undefinedの可能性がある点に注意！)
+```
+
+また、`has()`や`entries()`など、[ECMAScript `Map`](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Map)に似たメソッドもいくつか用意されています。
+
+引数やメソッドなどの詳細は[JSRのドキュメントページ](https://jsr.io/@ayaexptech/originstorage/doc)及びJSDocコメントを参照してください。
 
 ## Contributing
 
