@@ -1,11 +1,7 @@
 {
     "name": "@ayaexptech/originstorage",
     "version": "0.0.0",
-    "include": [
-        "README.md",
-        "LICENSE",
-        "src/**/*.ts"
-    ],
+    "include": ["README.md", "LICENSE", "src/**/*.ts"],
     "license": "MIT",
     "exports": "./mod.ts"
 }

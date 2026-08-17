@@ -9,6 +9,7 @@
         "test:jsr": "jsr publish --dry-run"
     },
     "devDependencies": {
+        "fake-indexeddb": "^6.2.5",
         "jsr": "^0.14.3",
         "oxfmt": "^0.59.0",
         "oxlint": "^1.74.0",
