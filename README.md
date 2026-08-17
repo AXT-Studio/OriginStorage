@@ -61,6 +61,7 @@ await exampleOriginStorage.setItem("hoge", "fuga");
 await exampleOriginStorage.getItem("hoge"); // => "fuga"
 await exampleOriginStorage.removeItem("hoge");
 await exampleOriginStorage.clear();
+await exampleOriginStorage.getSize(); // => 0 (lengthやsizeではないので注意)
 ```
 
 - keyは`string`である必要があります。
