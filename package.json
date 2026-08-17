@@ -1,0 +1,17 @@
+{
+    "scripts": {
+        "fmt": "oxfmt",
+        "fmt:check": "oxfmt --check",
+        "lint": "oxlint",
+        "lint:fix": "oxlint --fix",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:jsr": "jsr publish --dry-run"
+    },
+    "devDependencies": {
+        "jsr": "^0.14.3",
+        "oxfmt": "^0.59.0",
+        "oxlint": "^1.74.0",
+        "vitest": "^4.1.10"
+    }
+}
