@@ -1,5 +1,7 @@
 # AyaExpTech OriginStorage
 
+Typed LocalStorage-like wrapper for IndexedDB (by AyaExpTech)
+
 IndexedDBのObjectStoreをLocalStorageのように扱うための、薄いラッパーライブラリです。
 
 ## License
